@@ -120,8 +120,8 @@ describe CarrierWave::Storage::AWSFile do
       end
 
       it 'uploads the file using with multipart support' do
-        expect(file).to(receive(:upload_file)
-                              .with(new_file.path, an_instance_of(Hash)))
+        expect(file).to(receive(:put)
+                              .with(an_instance_of(Hash)))
         aws_file.store(new_file)
       end
     end
